@@ -38,17 +38,35 @@
 //   }
 // );
 
-gsap.to(".fred", {
-  x: 500,
-  duration: 2,
+// gsap.to(".fred", {
+//   x: 500,
+//   duration: 2,
+// });
+
+// gsap.to(".bluefred", {
+//   x: 500,
+//   duration: 2,
+
+//   delay: 2,
+
+//   ease: "expo.in",
+// });
+
+
+let hoverAnimation = gsap.to(".hover-btn ", {
+  scale: 1.2,
+  duration: 0.5,
+  paused: true,
+  ease: "linear",
+  backgroundColor: "red",
+
+
 });
 
-gsap.to(".bluefred", {
-  x: 500,
-  duration: 2,
-  repeat: 1,
-  delay: 2,
-  // yoyo: true,
-  // ease: "bounce",
-  ease: "expo.in",
+document.querySelector(".hover-btn").addEventListener("mouseenter", () => {
+  hoverAnimation.play();
+});
+
+document.querySelector(".hover-btn").addEventListener("mouseleave", () => {
+  hoverAnimation.reverse();
 });
